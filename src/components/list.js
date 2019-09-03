@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledList = styled.div`
-  background: lightgreen;
+  /* background: lightgreen; */
   /* display: grid;
   grid-template-columns: repeat( auto-fit, minmax(300px, auto) );
   grid-gap: 10px; */

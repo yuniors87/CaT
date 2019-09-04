@@ -1,19 +1,37 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
 const StyledList = styled.div`
-  /* background: lightgreen; */
-  /* display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(300px, auto) );
-  grid-gap: 10px; */
   display: flex;
   flex-wrap: wrap;
 `
+const Item = styled.div`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 7px;
+  padding: 0 15px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+`
 
-const List = ({children}) => (
+const LabelItem = styled.p`
+  margin: 0;
+`
+
+const List = ({ tareas }) => (
   <StyledList>
-    {children}
+    {tareas.map(tarea => (
+      <Item key={tarea.valor} data-valor={tarea.valor}>
+        <LabelItem>
+          {tarea.nombre} ({tarea.valor})
+        </LabelItem>
+      </Item>
+    ))}
   </StyledList>
 )
 
-export default List;
+export default List

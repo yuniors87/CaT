@@ -19,7 +19,7 @@ const Item = styled.div`
   background: ${props => (props.activo ? "lightgreen" : "")};
 `
 
-function List({ tareas, cambiar }) {
+function List({ tareas, seleccionarTarea }) {
   return (
     <StyledList>
       {tareas.map(tarea => (
@@ -27,7 +27,7 @@ function List({ tareas, cambiar }) {
           key={tarea.valor}
           data-valor={tarea.valor}
           activo={tarea.activo}
-          onClick={cambiar}
+          onClick={seleccionarTarea}
         >
           {tarea.nombre} ({tarea.valor})
         </Item>

@@ -44,6 +44,31 @@ class IndexPage extends Component {
     this.setState({ tareas: nuevaLista })
   }
 
+  calcularTareasValor(menoresTarget, valor) {
+    const tamanoLista = menoresTarget.length
+    console.log(`tamaño ${tamanoLista} de ${menoresTarget}`)
+
+    for (let pos = 0; pos < tamanoLista + 1; pos++) {
+      for (let can = 1; can < tamanoLista + 1; can++) {
+        let listAux = [...menoresTarget]
+        listAux.splice(pos, can)
+        // console.log(removed)
+        // console.log(listAux)
+        if (listAux.length > 1) {
+          const res = Number(listAux.reduce((ac, val) => ac + val))
+          if (res === valor) {
+            console.log(`pos:${pos} - can:${can}`)
+            console.log("llego")
+            console.log(listAux)
+          }
+        }
+        // if (listAux.reduce((ac, val) => ac + val) == valor) {
+        //   console.log("llego")
+        // }
+      }
+    }
+  }
+
   marcarTarea(tarea) {
     const nuevoEstado = this.state.tareas
     const objIndex = nuevoEstado.findIndex(obj => obj.valor === Number(tarea))
@@ -53,7 +78,7 @@ class IndexPage extends Component {
 
   calcularLista(e) {
     this.limpiarLista()
-    const valor = e.target.value
+    const valor = Number(e.target.value)
     this.setState({ valorTotal: Number(valor) }, () => {
       let listaValores = this.state.tareas.map(function(elem) {
         return elem.valor
@@ -63,7 +88,9 @@ class IndexPage extends Component {
       )
       if (menoresTarget.includes(this.state.valorTotal)) {
         this.marcarTarea([this.state.valorTotal])
-      } else console.log("no existe")
+      } else {
+        this.calcularTareasValor(menoresTarget, valor)
+      }
     })
   }
 

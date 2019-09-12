@@ -1,8 +1,20 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import List from "../components/list"
+
+const StyledInput = styled.input`
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+`
 
 const tareasBase = [
   { nombre: "EnviarRecordatorioRevisionIncidentes", valor: 1 },
@@ -32,7 +44,8 @@ class IndexPage extends Component {
     super(props)
     this.state = {
       tareas: tareasBase,
-      valorTotal: 0,
+      valorActual: 0,
+      valorMaximo: 0,
     }
     this.seleccionarTarea = this.seleccionarTarea.bind(this)
   }
@@ -45,27 +58,19 @@ class IndexPage extends Component {
   }
 
   calcularTareasValor(menoresTarget, valor) {
-    const tamanoLista = menoresTarget.length
-    console.log(`tamaño ${tamanoLista} de ${menoresTarget}`)
-
-    for (let pos = 0; pos < tamanoLista + 1; pos++) {
-      for (let can = 1; can < tamanoLista + 1; can++) {
-        let listAux = [...menoresTarget]
-        listAux.splice(pos, can)
-        // console.log(removed)
-        // console.log(listAux)
-        if (listAux.length > 1) {
-          const res = Number(listAux.reduce((ac, val) => ac + val))
-          if (res === valor) {
-            console.log(`pos:${pos} - can:${can}`)
-            console.log("llego")
-            console.log(listAux)
-          }
-        }
-        // if (listAux.reduce((ac, val) => ac + val) == valor) {
-        //   console.log("llego")
-        // }
+    menoresTarget.reverse()
+    let nuevoValor = valor
+    let listaFinal = []
+    menoresTarget.map(aux => {
+      if (aux <= nuevoValor) {
+        nuevoValor -= aux
+        listaFinal.push(aux)
       }
+    })
+    const valorFinal = listaFinal.reduce((a, b) => a + b, 0)
+    console.log(valorFinal, valor)
+    if (valorFinal == valor) {
+      listaFinal.map(item => this.marcarTarea(item))
     }
   }
 
@@ -78,18 +83,18 @@ class IndexPage extends Component {
 
   calcularLista(e) {
     this.limpiarLista()
-    const valor = Number(e.target.value)
-    this.setState({ valorTotal: Number(valor) }, () => {
+    const valorIngresado = Number(e.target.value)
+    this.setState({ valorActual: Number(valorIngresado) }, () => {
       let listaValores = this.state.tareas.map(function(elem) {
         return elem.valor
       })
       const menoresTarget = listaValores.filter(
-        val => val <= this.state.valorTotal
+        val => val <= this.state.valorActual
       )
-      if (menoresTarget.includes(this.state.valorTotal)) {
-        this.marcarTarea([this.state.valorTotal])
+      if (menoresTarget.includes(this.state.valorActual)) {
+        this.marcarTarea(this.state.valorActual)
       } else {
-        this.calcularTareasValor(menoresTarget, valor)
+        this.calcularTareasValor(menoresTarget, valorIngresado)
       }
     })
   }
@@ -99,21 +104,20 @@ class IndexPage extends Component {
     const valor = seleccionados.reduce(function(accumulator, seleccionado) {
       return accumulator + seleccionado.valor
     }, 0)
-    this.setState({ valorTotal: valor })
+    this.setState({ valorActual: valor })
   }
 
   seleccionarTarea(e) {
-    this.marcarTarea([e.target.getAttribute("data-valor")])
+    this.marcarTarea(e.target.getAttribute("data-valor"))
     this.calcularValor()
   }
   render() {
     return (
       <Layout>
-        <h1>Pruebas</h1>
-        <input
+        <StyledInput
           type="number"
           name="title"
-          value={this.state.valorTotal > 0 ? this.state.valorTotal : ""}
+          value={this.state.valorActual > 0 ? this.state.valorActual : ""}
           onChange={e => {
             this.calcularLista(e)
           }}
@@ -122,7 +126,6 @@ class IndexPage extends Component {
           tareas={this.state.tareas}
           seleccionarTarea={this.seleccionarTarea}
         />
-        <br />
         <Link to="/page-2">Pagina 2</Link>
       </Layout>
     )

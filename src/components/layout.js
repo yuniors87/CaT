@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
 import Header from "./header"
@@ -34,8 +33,6 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <StyledBody>
-        <Link to="/qsoft">QSOFT</Link>
-        <Link to="/qsoft2">QSOFT2</Link>
         <StyledMain>{children}</StyledMain>
       </StyledBody>
     </>

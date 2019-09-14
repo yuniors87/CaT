@@ -13,6 +13,12 @@ const TareasBase = [
   { nombre: "EnviarRecordatorioMedicionEficacia", valor: 2048 },
   { nombre: "IniciarReemplazo", valor: 4096 },
   { nombre: "FinalizarReemplazo", valor: 8192 },
+  { nombre: "EnviarInformesActividadesPendientes", valor: 16384 },
+  { nombre: "EnviarRecordatorioCierreAccionPendiente", valor: 32768 },
+  { nombre: "EnviarRecordatorioSeguimientoPlanes", valor: 65536 },
+  { nombre: "ActualizarLicencia", valor: 131072 },
+  { nombre: "EnviarResumenDesviacionesNoCerradas", valor: 262144 },
+  { nombre: "PruebaEnvioCorreo", valor: 1048576 },
 ]
 
 export default TareasBase

@@ -3,9 +3,13 @@ import styled from 'styled-components';
 
 import List from './list';
 
+const StyledTitle = styled.h2`
+  margin: auto 0;
+  margin-right: 20px;
+`;
+
 const StyledInput = styled.input`
-  padding: 10px;
-  margin-bottom: 10px;
+  height: 45px;
   display: inline-block;
   border: 2px solid #bfc9ca;
   border-radius: 5px;
@@ -87,9 +91,7 @@ class Calculador extends Component {
     this.setState({ valorActual: Number(valorIngresado) }, () => {
       const { valorActual } = this.state;
       const listaValores = tareas.map((elem) => elem.valor);
-      const menoresTarget = listaValores.filter(
-        (val) => val <= valorActual,
-      );
+      const menoresTarget = listaValores.filter((val) => val <= valorActual);
       if (menoresTarget.includes(valorActual)) {
         this.marcarTarea(valorActual);
       } else {
@@ -114,6 +116,7 @@ class Calculador extends Component {
     const { tareas, valorActual } = this.state;
     return (
       <>
+        <StyledTitle>{this.props.title}</StyledTitle>
         <StyledInput
           type="number"
           value={valorActual}
@@ -121,10 +124,7 @@ class Calculador extends Component {
             this.calcularLista(e);
           }}
         />
-        <List
-          tareas={tareas}
-          seleccionarTarea={this.seleccionarTarea}
-        />
+        <List tareas={tareas} seleccionarTarea={this.seleccionarTarea} />
       </>
     );
   }

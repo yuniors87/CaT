@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  margin-top: 15px;
 `;
 const Item = styled.div`
   height: 40px;
@@ -23,7 +24,8 @@ const Item = styled.div`
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.35);
   }
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    flex-grow: 1;
   }
 `;
 

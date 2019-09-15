@@ -3,9 +3,10 @@ import Layout from '../components/layout';
 import Calculador from '../components/calculador';
 import Tareas from '../sistemas/qsoft2';
 
+const title = 'QSOFT2';
 const Qsoft2 = () => (
-  <Layout>
-    <Calculador tareas={Tareas} title="QSOFT2" />
+  <Layout title={title}>
+    <Calculador tareas={Tareas} title={title} />
   </Layout>
 );
 

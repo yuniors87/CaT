@@ -1,10 +1,11 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const StyledList = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;
 const Item = styled.div`
   height: 40px;
   display: flex;
@@ -16,30 +17,31 @@ const Item = styled.div`
   margin: 7px;
   padding: 0 20px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-  background: ${props => (props.activo ? "#008C7A" : "")};
-  color: ${props => (props.activo ? "#EAEDED" : "#273746")};
+  background: ${(props) => (props.activo ? '#008C7A' : '')};
+  color: ${(props) => (props.activo ? '#EAEDED' : '#273746')};
   &:hover {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.35);
   }
   @media (max-width: 768px) {
     font-size: 0.9rem;
   }
-`
+`;
 
 function List({ tareas, seleccionarTarea }) {
   return (
     <StyledList>
-      {tareas.map(tarea => (
+      {tareas.map((tarea) => (
         <Item
           key={tarea.valor}
           data-valor={tarea.valor}
           activo={tarea.activo}
           onClick={seleccionarTarea}
         >
-          {tarea.nombre} ({tarea.valor})
+          {`${tarea.nombre} ${tarea.valor}`}
         </Item>
       ))}
     </StyledList>
-  )
+  );
 }
-export default List
+
+export default List;

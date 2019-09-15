@@ -48,8 +48,10 @@ const StyledMenuItem = styled((props) => <Link {...props} />)`
   text-decoration: none;
   margin: 0 15px;
   font-size: 1.2rem;
+  opacity: 0.5;
   &:hover {
     margin-bottom: 2px;
+    opacity: 1;
   }
   @media (max-width: 768px) {
     font-size: 1rem;

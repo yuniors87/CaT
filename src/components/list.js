@@ -8,6 +8,7 @@ const StyledList = styled.div`
   margin-top: 15px;
 `;
 const Item = styled.div`
+  font-size: 1rem;
   height: 40px;
   display: flex;
   align-items: center;
@@ -20,8 +21,14 @@ const Item = styled.div`
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   background: ${(props) => (props.activo ? '#008C7A' : '')};
   color: ${(props) => (props.activo ? '#EAEDED' : '#273746')};
+  transition: transform  0.12s ease-in-out;
+  &:active {
+    box-shadow: 0 3px 0 #00823f;
+    top: 3px;
+  }
   &:hover {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.35);
+    transform: scale(1.01);
   }
   @media (max-width: 768px) {
     font-size: 0.8rem;

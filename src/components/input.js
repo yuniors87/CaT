@@ -29,6 +29,7 @@ function Input({ valor, cambiar }) {
       onChange={(e) => {
         cambiar(e);
       }}
+      placeholder={0}
     />
   );
 }

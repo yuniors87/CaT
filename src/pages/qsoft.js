@@ -6,8 +6,7 @@ import Tareas from '../sistemas/qsoft';
 const title = 'QSOFT';
 const Qsoft = () => (
   <Layout title={title}>
-    <Calculador2 tareas={Tareas} />
-    {/* <Calculador tareas={Tareas} title={title} /> */}
+    <Calculador2 tareas={Tareas} title={title} />
   </Layout>
 );
 

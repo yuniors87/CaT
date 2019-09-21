@@ -15,7 +15,6 @@ const StyledTarea = styled.div`
 `;
 
 const StyledTag = styled.p`
-  /* background: lightcoral; */
   display: inline-block;
   margin: 8px 15px;
   font-size: 1rem;

@@ -25,7 +25,7 @@ function Input({ valor, cambiar }) {
   return (
     <StyledInput
       type="number"
-      value={valor}
+      value={valor === 0 ? '' : valor}
       onChange={(e) => {
         cambiar(e);
       }}

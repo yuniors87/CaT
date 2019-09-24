@@ -6,7 +6,7 @@ import Tareas from '../sistemas/srp';
 const title = 'SRP';
 const Srp = () => (
   <Layout title={title}>
-    <Calculador2 tareas={Tareas} title={title} />
+    <Calculador2 tareasGeneral={Tareas} title={title} />
   </Layout>
 );
 

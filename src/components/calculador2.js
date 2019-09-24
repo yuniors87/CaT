@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ListaTareas from './listaTareas';
 import Input from './input';
@@ -8,8 +8,8 @@ const StyledTitle = styled.h2`
   margin-right: 20px;
 `;
 
-function Calculador2({ tareas, title }) {
-  const [listaTareas, setListaTareas] = useState(tareas);
+function Calculador2({ tareasGeneral, title }) {
+  const [listaTareas, setListaTareas] = useState(tareasGeneral);
   const [valorActual, setValorActual] = useState(0);
 
   const MarcarTarea = (valorTarea) => {
@@ -65,6 +65,11 @@ function Calculador2({ tareas, title }) {
     const valorIngresado = Number(e.target.value);
     CalcularTareasXValor(valorIngresado);
   };
+
+  // this replace componentdidmount
+  useEffect(() => {
+    CalculatValorXTareas();
+  }, []);
 
   return (
     <>

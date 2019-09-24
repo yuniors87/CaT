@@ -1,9 +1,10 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
 
-import Qsoft from "./qsoft"
+import Qsoft from './qsoft';
+
 class IndexPage extends Component {
   render() {
-    return <Qsoft />
+    return <Qsoft />;
   }
 }
-export default IndexPage
+export default IndexPage;

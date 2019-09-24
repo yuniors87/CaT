@@ -12,6 +12,10 @@ const StyledTarea = styled.div`
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   background: ${(props) => (props.activo ? '#008C7A' : '')};
   color: ${(props) => (props.activo ? '#EAEDED' : '#273746')};
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    flex-grow: 1;
+  }
 `;
 
 const StyledTag = styled.p`

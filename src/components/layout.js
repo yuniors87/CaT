@@ -11,6 +11,7 @@ const StyledMain = styled.main`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 30px;
 `;
 const StyledBody = styled.div`
   margin: 0 auto;

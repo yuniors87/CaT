@@ -71,8 +71,9 @@ function Otros() {
     <Layout title="Otros">
       <StyledContenedor>
         <Advertencia>* Se lee cada línea, por cada línea se toma la palabra antes del igual y el monto despues del igual como valor.</Advertencia>
+        <Advertencia>  No olvidar el espacio antes y despues del igual.</Advertencia>
         <StyledTextarea name="tareas" id="tareas" cols="auto" rows="20" onChange={(e) => HandleChange(e)} />
-        <Button name="Calcular" click={Calcular} />
+        <Button name="Convertir" click={Calcular} />
         <Calculador />
       </StyledContenedor>
     </Layout>

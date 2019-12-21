@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Tarea from './tarea';
 
@@ -18,5 +19,10 @@ function ListaTareas({ listaTareas, tareaSeleccionada }) {
     </StyledList>
   );
 }
+
+ListaTareas.propTypes = {
+  listaTareas: PropTypes.string.isRequired,
+  tareaSeleccionada: PropTypes.func.isRequired,
+};
 
 export default ListaTareas;

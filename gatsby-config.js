@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Calculador de Tareas',
+    title: 'Calculadora de Tareas',
     description: 'Ayuda a indentificar que tareas se están ejecutando.',
     author: '@yuniors87',
   },

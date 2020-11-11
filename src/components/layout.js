@@ -1,59 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import Footer from './Footer';
+import Nav from './Nav';
+import 'normalize.css';
+import GlobalStyles from '../styles/GlobalStyles';
+import Typography from '../styles/Typography';
 
-import Header from './header';
-import './layout.css';
-
-const StyledMain = styled.main`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 30px;
-`;
-const StyledBody = styled.div`
-  margin: 0 auto;
-  max-width: 1200px;
-  padding-top: 0;
-`;
-
-const Layout = ({ children, title }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `,
-  );
-
+export default function Layout({ children }) {
   return (
-    <>
-      <Helmet
-        title={title}
-        titleTemplate={`%s | ${site.siteMetadata.title}`}
-      />
-      <Header siteTitle={site.siteMetadata.title} />
-      <StyledBody>
-        <StyledMain>
-          {children}
-        </StyledMain>
-      </StyledBody>
-    </>
+    <div>
+      <GlobalStyles />
+      <Typography />
+      <Nav />
+      {children}
+      <Footer />
+    </div>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
-
-};
-
-export default Layout;
+}

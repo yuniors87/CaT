@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Qsoft from './qsoft';
-
-class IndexPage extends Component {
-  render() {
-    return <Qsoft />;
-  }
+export default function Home() {
+  return (
+    <>
+      <p>Hola mundo</p>
+    </>
+  );
 }
-export default IndexPage;

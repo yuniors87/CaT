@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "author": "Alberto Mariscal <yuniors87@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.13.2",
-    "gatsby": "^3.14.2",
+    "babel-plugin-styled-components": "^1.13.3",
+    "gatsby": "^3.14.3",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-manifest": "^3.14.0",
     "gatsby-plugin-offline": "^4.14.0",
@@ -15,6 +15,7 @@
     "gatsby-plugin-styled-components": "^4.14.0",
     "gatsby-source-filesystem": "^3.14.0",
     "gatsby-transformer-sharp": "^3.14.0",
+    "install-peerdeps": "^3.0.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

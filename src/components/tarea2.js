@@ -25,24 +25,20 @@ const StyledTag = styled.p`
     font-size: 1rem;
   `;
 
-function Tarea({ tarea, tareaSeleccionada }) {
+function Tarea2({ tarea }) {
   return (
     <StyledTarea
       activo={tarea.activo}
-      onClick={() => {
-        tareaSeleccionada(tarea.valor);
-      }}
     >
       <StyledTag>
-        {`${tarea.nombre} ${tarea.valor}`}
+        {`${tarea.Nombre} ${tarea.Codigo}`}
       </StyledTag>
     </StyledTarea>
   );
 }
 
-Tarea.propTypes = {
+Tarea2.propTypes = {
   tarea: PropTypes.string.isRequired,
-  tareaSeleccionada: PropTypes.func.isRequired,
 };
 
-export default Tarea;
+export default Tarea2;

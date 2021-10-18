@@ -24,6 +24,6 @@ const TareasBase = [
   { nombre: 'EnviarNotificacionVacacionesxComenzar ', valor: 524288 },
   { nombre: 'PruebaEnvioCorreo', valor: 1048576 },
   { nombre: 'PruebaEnvioCorreoAdjunto', valor: 2097152 },
-]
+];
 
-export default TareasBase
+export default TareasBase;

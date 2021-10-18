@@ -68,6 +68,7 @@ const Header = ({ siteTitle }) => (
         <StyledMenuItem to="/qsoft">QSOFT</StyledMenuItem>
         <StyledMenuItem to="/qsoft2">QSOFT2</StyledMenuItem>
         <StyledMenuItem to="/srp">SRP</StyledMenuItem>
+        <StyledMenuItem to="/srp2">SRP v2</StyledMenuItem>
         <StyledMenuItem to="/otros">OTROS</StyledMenuItem>
       </StyledMenu>
     </Contenedor>

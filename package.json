@@ -5,33 +5,33 @@
   "version": "1.0.0",
   "author": "Alberto Mariscal <yuniors87@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "^2.0.7",
-    "gatsby": "^4.21.1",
+    "babel-plugin-styled-components": "^1.13.2",
+    "gatsby": "^3.14.2",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-manifest": "^4.21.0",
-    "gatsby-plugin-offline": "^5.21.0",
-    "gatsby-plugin-react-helmet": "^5.21.0",
-    "gatsby-plugin-sharp": "^4.21.0",
-    "gatsby-plugin-styled-components": "^5.21.0",
-    "gatsby-source-filesystem": "^4.21.1",
-    "gatsby-transformer-sharp": "^4.21.0",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "gatsby-plugin-manifest": "^3.14.0",
+    "gatsby-plugin-offline": "^4.14.0",
+    "gatsby-plugin-react-helmet": "^4.14.0",
+    "gatsby-plugin-sharp": "^3.14.1",
+    "gatsby-plugin-styled-components": "^4.14.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-sharp": "^3.14.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
-    "eslint": "^8.22.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.31.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1"
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby" 
   ],
   "license": "MIT",
   "scripts": {

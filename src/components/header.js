@@ -1,14 +1,14 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'styled-components';
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
+import styled from "styled-components"
 
 const StyledHeader = styled.header`
   background: #eaecee;
   margin-bottom: 1rem;
   color: #273746;
   letter-spacing: 2px;
-`;
+`
 const Contenedor = styled.div`
   margin: 0 auto;
   max-width: 1200px;
@@ -22,7 +22,7 @@ const Contenedor = styled.div`
     padding: 1rem 0.8rem;
     flex-wrap: wrap;
   }
-`;
+`
 const Title = styled.h1`
   margin: 0;
   @media (max-width: 768px) {
@@ -30,11 +30,11 @@ const Title = styled.h1`
     font-size: 1.5rem;
     width: 100%;
   }
-`;
+`
 const StyledLink = styled((props) => <Link {...props} />)`
   color: #273746;
   text-decoration: none;
-`;
+`
 
 const StyledMenu = styled.ul`
   padding: 0;
@@ -42,7 +42,7 @@ const StyledMenu = styled.ul`
   @media (max-width: 768px) {
     margin-top: 10px;
   }
-`;
+`
 const StyledMenuItem = styled((props) => <Link {...props} />)`
   color: #273746;
   text-decoration: none;
@@ -56,7 +56,7 @@ const StyledMenuItem = styled((props) => <Link {...props} />)`
   @media (max-width: 768px) {
     font-size: 1rem;
   }
-`;
+`
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
@@ -72,14 +72,14 @@ const Header = ({ siteTitle }) => (
       </StyledMenu>
     </Contenedor>
   </StyledHeader>
-);
+)
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-};
+}
 
 Header.defaultProps = {
-  siteTitle: 'CaT',
-};
+  siteTitle: "CaT",
+}
 
-export default Header;
+export default Header

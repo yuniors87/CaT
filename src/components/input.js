@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
 const StyledInput = styled.input`
   height: 45px;
@@ -9,7 +9,7 @@ const StyledInput = styled.input`
   box-sizing: border-box;
   font-size: 1.2rem;
   text-align: center;
-  max-width: 180px;
+  max-width: 200px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
   outline: none;
   &:focus {
@@ -19,19 +19,19 @@ const StyledInput = styled.input`
     max-width: 120px;
     font-size: 1rem;
   }
-`;
+`
 
 function Input({ valor, cambiar }) {
   return (
     <StyledInput
       type="number"
-      value={valor === 0 ? '' : valor}
+      value={valor === 0 ? "" : valor}
       onChange={(e) => {
-        cambiar(e);
+        cambiar(e)
       }}
       placeholder={0}
     />
-  );
+  )
 }
 
-export default Input;
+export default Input

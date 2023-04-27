@@ -15,6 +15,8 @@ const TareasBase = [
   { nombre: "ModificarDocumentosVigentesOEnProceso", valor: 32768 },
   { nombre: "CambiarCodigoSector", valor: 65536 },
   { nombre: "ActualizarLicencia", valor: 131072 },
+  { nombre: "ExportarDocumentosVigentes", valor: 262144 },
+  { nombre: "EnviarRecordatorioPendientes", valor: 524288 },
   { nombre: "PruebaEnvioCorreo", valor: 1048576 },
 ]
 
